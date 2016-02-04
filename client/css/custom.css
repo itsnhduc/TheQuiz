@@ -1,0 +1,10 @@
+#name {
+	width: 50%;
+	margin: auto;
+}
+.no-margin {
+	margin: 0px;
+}
+.margin-bottom-small {
+	margin-bottom: 10px;
+}
