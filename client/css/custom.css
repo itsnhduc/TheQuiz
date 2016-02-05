@@ -1,5 +1,9 @@
-#name {
+.content-holder-50 {
 	width: 50%;
+	margin: auto;
+}
+.content-holder-70 {
+	width: 70%;
 	margin: auto;
 }
 .no-margin {
