@@ -6,23 +6,17 @@
                 <div class="content-holder-70">
                     <form>
                         <div class="form-group">
-                            <textarea class="form-control margin-bottom-small" rows="3" placeholder="Question"></textarea>
+                            <textarea id="ques" class="form-control margin-bottom-small" rows="3" placeholder="Question"></textarea>
                             <div class="row">
                             	<div class="col-lg-6 margin-bottom-small">
-                            		<input type="text" class="form-control" placeholder="Choice 1">
+                            		<input id="ans1" type="text" class="form-control" placeholder="Choice 1">
                             	</div>
                             	<div class="col-lg-6 margin-bottom-small">
-                            		<input type="text" class="form-control" placeholder="Choice 2">
-                            	</div>
-                            	<div class="col-lg-6 margin-bottom-small">
-                            		<input type="text" class="form-control" placeholder="Choice 3">
-                            	</div>
-                            	<div class="col-lg-6 margin-bottom-small">
-                            		<input type="text" class="form-control" placeholder="Choice 4">
+                            		<input id="ans2" type="text" class="form-control" placeholder="Choice 2">
                             	</div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-default center-block">SUBMIT</button>
+                        <button id="submit" type="submit" class="btn btn-default center-block">SUBMIT</button>
                     </form>
                 </div>
 	        </div>
@@ -31,11 +25,40 @@
 	<section class="container content-section text-center">
 	    <div class="row">
 	        <div class="col-lg-8 col-lg-offset-2">
-	            <h1 class="margin-bottom-small">ALL ANSWERS</h1>
+	            <h4>ALL ANSWERS ({{numOfQuestions}})</h4>
                 <div class="content-holder-70">
-                    sth in here
+                    {{#each questions}}
+                        {{> individualQuestion}}
+                    {{/each}}
                 </div>
 	        </div>
 	    </div>
 	</section>
+    <section class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h4>ALL USERS ()</h4>
+                <h5>Male</h5>
+                <div class="content-holder-70">
+
+                </div>
+                <h5>Female</h5>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</template>
+
+<template name="individualQuestion">
+    <h3>{{question}}</h3>
+    <div class="row">
+        {{#each answer}}
+            <div class="col-lg-6">{{this}}</div>
+        {{/each}}
+    </div>
+    <br>
 </template>
