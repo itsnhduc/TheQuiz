@@ -14,7 +14,16 @@
                         <h1 class="brand-heading">TheQuiz</h1>
                         <p class="intro-text">Find your perfect match</p>
                         {{#if currentUser}}
-                            <button id="view-result" class="btn btn-default">View your match</button>
+                            {{#if completed}}
+                                {{#if isFemale}}
+                                    <button id="view-result" class="btn btn-default">View your match</button>
+                                {{else}}
+                                    <p>Your answers have been recorded</p>
+                                    <p>Thank you for your time</p>
+                                {{/if}}
+                            {{else}}
+                                <button id="take-quiz" class="btn btn-default">Start the quiz</button>
+                            {{/if}}
                         {{else}}
                             <button id="facebook-login" class="btn btn-default">Login with Facebook</button>
                         {{/if}}
