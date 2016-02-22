@@ -1,6 +1,6 @@
 <template name="individualQuestion">
-	<div id="question{{index}}" class="question-container">
-	    <button id="q-delete" class="btn btn-danger" style="display: none">&times;</button>
+	<div id="question{{index}}" class="question-container hidden">
+	    <button id="q-delete" class="btn btn-danger hidden">&times;</button>
 	    <h3>{{question}}</h3>
 	    <div class="row">
 	        {{#each answer}}

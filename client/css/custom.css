@@ -15,3 +15,6 @@
 .answer-btn {
 	width: 100%;
 }
+.hidden {
+	display: none;
+}
