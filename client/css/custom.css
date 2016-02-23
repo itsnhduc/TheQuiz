@@ -18,3 +18,7 @@
 .hidden {
 	display: none;
 }
+.img-holder {
+	width: 250px;
+	height: 250px;
+}
