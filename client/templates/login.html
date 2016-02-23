@@ -1,0 +1,6 @@
+<template name="login">
+    {{#if currentUser}}
+        {{currentUser.services.facebook.name}}
+        <button id="logout" class="btn btn-default">Logout</button>
+    {{/if}}
+</template>

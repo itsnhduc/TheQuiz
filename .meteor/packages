@@ -21,3 +21,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 twbs:bootstrap
 fortawesome:fontawesome
+accounts-facebook
+service-configuration
