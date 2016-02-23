@@ -12,3 +12,13 @@
 .margin-bottom-small {
 	margin-bottom: 10px;
 }
+.answer-btn {
+	width: 100%;
+}
+.hidden {
+	display: none;
+}
+.img-holder {
+	width: 250px;
+	height: 250px;
+}
