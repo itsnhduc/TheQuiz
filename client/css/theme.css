@@ -1,8 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Arimo&subset=latin,vietnamese);
 body {
     width: 100%;
     height: 100%;
-    font-family: 'Raleway';
+    font-family: 'Arimo';
     color: #fff;
     background-color: #000;
 }
