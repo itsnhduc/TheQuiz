@@ -1,13 +1,13 @@
 <template name="quiz">
 	<section id="ready" class="container content-section text-center">
 	    <div class="row">
-            <h1>Hi {{currentUser.services.facebook.first_name}}, <br>ARE YOU READY TO TAKE THEQUIZ?</h1>
-        	<button id="quiz-start" class="btn btn-default">START</button>
+            <h1>Chào {{currentUser.services.facebook.first_name}}, <br>BẠN ĐÃ SẴN SÀNG ĐỂ BẮT ĐẦU THEQUIZ CHƯA?</h1>
+        	<button id="quiz-start" class="btn btn-default">Sẵn sàng</button>
 	    </div>
 	</section>
 	<section class="container content-section text-center">
         <div class="content-holder-70">
-        	<p id="quiz-progress" class="hidden">{{activeQuestion}} out of {{numOfQuestion}}</p>
+        	<p id="quiz-progress" class="hidden">Câu hỏi số {{activeQuestion}} trong tổng số {{numOfQuestion}} câu hỏi</p>
 	        {{#each questions}}
 	            {{> individualQuestion}}
 	        {{/each}}
