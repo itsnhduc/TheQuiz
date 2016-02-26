@@ -7,9 +7,12 @@ if (Meteor.isServer) {
 	});
 	Meteor.publish('users', function() {
 		return Meteor.users.find({}, {fields: {
+			'profile.name': 1,
 			'services.facebook.first_name': 1,
 			'services.facebook.last_name': 1,
-			'services.facebook.name': 1
+			'services.facebook.gender': 1,
+			'services.facebook.name': 1,
+			'services.facebook.id': 1
 		}});
 	});
 }
