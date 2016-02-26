@@ -7,6 +7,15 @@ Meteor.methods({
 			createdAt: new Date()
 		});
 	},
+	'removeQuestion': function(questionId) {
+		var deletedIndex = Questions.findOne(questionId).index;
+		var numOfQuestion = Questions.find().count();
+		var lastQuestion = Questions.findOne({index: numOfQuestion});
+		if (lastQuestion) {
+			Questions.update(lastQuestion._id, {$set: {index: deletedIndex}});
+		}
+		Questions.remove(questionId);
+	},
 	'insertAnswerChain': function(userId, answerChain, matchId, gender) {
 		AnswerChains.insert({
 			userId: userId,

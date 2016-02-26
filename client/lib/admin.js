@@ -15,13 +15,22 @@ if (Meteor.isClient) {
 
 		'click #q-delete': function(event) {
 			event.preventDefault();
-			Questions.remove(this._id);
+			Meteor.call('removeQuestion', this._id);
 		}
 	});
 
 	Template.admin.helpers({
 		'questions': function() {
-			return Questions.find({});
+			return Questions.find();
+		},
+		'answerChains': function() {
+			return AnswerChains.find();
+		},
+		'numOfAnswers': function() {
+			return AnswerChains.find().count();
+		},
+		'userName': function() {
+			return Meteor.users.findOne(this.userId).profile.name;
 		},
 		'numOfQuestions': function() {
 			return Questions.find().count();
