@@ -1,23 +1,18 @@
 <template name="result">
-	<section id="ready" class="container content-section text-center content-holder-70">
-		<h1>Kết quả</h1>
+	<section id="ready" class="container result text-center content-holder-70">
+		<h4 class="no-margin">Người hợp với bạn nhất chính là</h4>
+		<h1>{{matchName}}</h1>
 		<div class="row">
 			<div class="col-md-5">
-				<h3>{{currentUser.profile.name}}</h3>
-				<div class="img-holder center-block">
-					<img src="{{profilePicUrl}}" class="img-responsive center-block">
-				</div>
+				<img src="{{profilePicUrl}}" style="float: right;">
 			</div>
 			<div class="col-md-2">
-				<h3>&amp;</h3>
+				<p class="percent">{{percentage}}%</p>
 			</div>
 			<div class="col-md-5">
-				<h3>{{matchName}}</h3>
-				<div class="img-holder center-block">
-					<img src="{{matchPicUrl}}" class="img-responsive center-block">
-				</div>
+				<img src="{{matchPicUrl}}" style="float: left;">
 			</div>
 		</div>
+		<button class="btn btn-default share">Share on Facebook</button>
 	</section>
-	<div class="center-block"></div>
 </template>

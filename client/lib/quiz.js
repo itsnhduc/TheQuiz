@@ -23,8 +23,11 @@ if (Meteor.isClient) {
 			if (gender == 'female') {
 				var match = findMatch(answerChain);
 				var matchId = match.userId;
-				Meteor.call('insertAnswerChain', userId, answerChain, matchId, gender);
-				Router.go('/result');
+				Meteor.call('insertAnswerChain', userId, answerChain, matchId, gender, function() {
+					var percentage = findPercentage(userId, matchId);
+					Meteor.call('insertPercentage', userId, percentage);
+					Router.go('/result');
+				});
 			} else {
 				Meteor.call('insertAnswerChain', userId, answerChain, '', gender);
 				Router.go('/thank-you');
@@ -34,6 +37,16 @@ if (Meteor.isClient) {
 			addToSession('activeQuestion', 1);
 			animateInOut('#question' + curIndex, '#question' + (curIndex + 1));
 		}
+	}
+
+	var findPercentage = function(userId, matchId) {
+		var userChain = AnswerChains.findOne({userId: userId}).answerChain;
+		var matchChain = AnswerChains.findOne({userId: matchId}).answerChain;
+		var score = sumXORString(userChain, matchChain);
+		console.log(score);
+		var numOfQuestion = Questions.find().count();
+		console.log(score / numOfQuestion * 100);
+		return Math.round(score / numOfQuestion * 100);
 	}
 
 	var findMatch = function(answerChain) {
@@ -50,7 +63,6 @@ if (Meteor.isClient) {
 				match = pool[i];
 			}
 		}
-		console.log('success');
 		return match;
 	}
 

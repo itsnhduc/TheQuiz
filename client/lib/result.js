@@ -15,6 +15,9 @@ if (Meteor.isClient) {
 		'matchPicUrl': function() {
 			var matchId = AnswerChains.findOne({userId: Meteor.userId()}).matchId;
 			return getPicUrl(Meteor.users.findOne({_id: matchId}).services.facebook.id);
+		},
+		'percentage': function() {
+			return Percentages.findOne({userId: Meteor.userId()}).percentage;
 		}
 	});
 

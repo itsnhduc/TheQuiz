@@ -5,6 +5,9 @@ if (Meteor.isServer) {
 	Meteor.publish('answerChains', function() {
 		return AnswerChains.find();
 	});
+	Meteor.publish('percentages', function() {
+		return Percentages.find();
+	});
 	Meteor.publish('users', function() {
 		return Meteor.users.find({}, {fields: {
 			'profile.name': 1,

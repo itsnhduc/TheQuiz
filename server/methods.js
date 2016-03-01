@@ -24,5 +24,11 @@ Meteor.methods({
 			gender: gender,
 			createdAt: new Date()
 		});
+	},
+	'insertPercentage': function(userId, percentage) {
+		Percentages.insert({
+			userId: userId,
+			percentage: percentage
+		});
 	}
 });

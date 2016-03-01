@@ -19,10 +19,6 @@
 .hidden {
 	display: none;
 }
-.img-holder {
-	width: 250px;
-	height: 250px;
-}
 .home-footer {
 	position: absolute;
 	bottom: 0px;
@@ -30,4 +26,21 @@
 }
 .credit div p {
 	font-size: medium;
+}
+.result {
+	padding-top: 150px;
+}
+.percent {
+	padding: 15px 20px 20px 20px;
+	background-image: url(/img/heart.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+img {
+	max-width:100%;
+	max-height:100%;
+}
+.share {
+	margin-top: 50px;
 }
