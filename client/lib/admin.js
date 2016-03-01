@@ -11,29 +11,33 @@ if (Meteor.isClient) {
 			$('#ques').val('');
 			$('#ans0').val('');
 			$('#ans1').val('');
-		},
-
-		'click #q-delete': function(event) {
-			event.preventDefault();
-			Meteor.call('removeQuestion', this._id);
 		}
 	});
 
 	Template.admin.helpers({
 		'questions': function() {
-			return Questions.find();
+			return Questions.find({}, {sort: {index: 1}});
 		},
 		'answerChains': function() {
-			return AnswerChains.find();
+			return AnswerChains.find({}, {sort: {createdAt: 1}});
 		},
 		'numOfAnswers': function() {
 			return AnswerChains.find().count();
+		},
+		'numOfUsers': function() {
+			return Meteor.users.find().count();
 		},
 		'userName': function() {
 			return Meteor.users.findOne(this.userId).profile.name;
 		},
 		'numOfQuestions': function() {
 			return Questions.find().count();
+		},
+		'match': function() {
+			return Meteor.users.findOne(this.matchId).profile.name;
+		},
+		'percentage': function() {
+			return Percentages.findOne({userId: this.userId}).percentage;
 		}
 	});
 }
