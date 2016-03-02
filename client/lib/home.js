@@ -10,18 +10,18 @@ if (Meteor.isClient) {
 	});
 
 	Template.home.events({
-        'click #facebook-login': function(event) {
-        	event.preventDefault();
-            Meteor.loginWithFacebook({}, function(err){
-                if (err) {
-                    throw new Meteor.Error("Facebook login failed");
-                }
-                if (AnswerChains.findOne({userId: Meteor.userId()}) == null) {
-                	Router.go('/quiz');
-            	}
-            });
-            
-        },
+		'click #facebook-login': function(event) {
+			event.preventDefault();
+			Meteor.loginWithFacebook({}, function(err){
+				if (err) {
+					throw new Meteor.Error("Facebook login failed");
+				}
+				if (AnswerChains.findOne({userId: Meteor.userId()}) == null) {
+					Router.go('/quiz');
+				}
+			});
+
+		},
 		'click #take-quiz': function(event) {
 			event.preventDefault();
 			Router.go('/quiz');

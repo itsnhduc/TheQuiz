@@ -1,18 +1,20 @@
 <template name="result">
 	<section id="ready" class="container result text-center content-holder-70">
+		<hr>
 		<h4 class="no-margin">Người hợp với bạn nhất chính là</h4>
 		<h1>{{matchName}}</h1>
 		<div class="row">
-			<div class="col-md-5">
-				<img src="{{profilePicUrl}}" style="float: right;">
+			<div class="col-md-5 img-holder">
+				<img src="{{profilePicUrl}}" class="left-img">
 			</div>
 			<div class="col-md-2">
 				<p class="percent">{{percentage}}%</p>
 			</div>
-			<div class="col-md-5">
-				<img src="{{matchPicUrl}}" style="float: left;">
+			<div class="col-md-5 img-holder">
+				<img src="{{matchPicUrl}}" class="right-img">
 			</div>
 		</div>
-		<button class="btn btn-default share">Share on Facebook</button>
+		<hr>
+    	<button id="share" class="btn btn-default center-block">Share on Facebook</button>
 	</section>
 </template>
